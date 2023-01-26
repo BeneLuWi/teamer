@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import yargs from "yargs/yargs";
-import { hideBin } from "yargs/helpers";
+import {hideBin} from "yargs/helpers";
 import notifier from "node-notifier";
 import cliProgress from "cli-progress";
 import colors from "ansi-colors";
@@ -21,10 +21,7 @@ const timeInSecs = argv.time * 60;
 
 // create new progress bar
 const b1 = new cliProgress.SingleBar({
-  format:
-    "TEAmer |" +
-    colors.green("{bar}") +
-    "| {percentage}% | {value}/{total} Sekunden",
+  format: formatter,
   barCompleteChar: "\u2588",
   barIncompleteChar: "\u2591",
   hideCursor: true,
@@ -52,4 +49,10 @@ notifier.notify({
 
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function formatter(options: cliProgress.Options, params: cliProgress.Params, payload: any) {
+  const bar = new cliProgress.Bar(options);
+
+  return `TEAmer | ${bar} | {percentage}% | ${Math.round(params.value / 60)}/${Math.round(params.total / 60)} Minutes`
 }
