@@ -9,8 +9,7 @@
   "scripts": {
     "test": "tsc && ./build/index.js -t 1",
     "format": "prettier -w .",
-    "build": "tsc",
-    "publish": "tsc && npm publish"
+    "build": "tsc"
   },
   "type": "module",
   "keywords": [
