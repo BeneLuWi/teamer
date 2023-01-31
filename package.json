@@ -1,17 +1,28 @@
 {
   "name": "teamer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "simple terminal tea timer",
+  "main": "build/index.js",
+  "bin": {
+    "teamer": "build/index.js"
+  },
   "scripts": {
     "test": "tsc && ./build/index.js -t 1",
     "format": "prettier -w .",
     "build": "tsc"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "tea",
+    "timer"
+  ],
+  "author": "Benedikt Lüken-Winkels <b.lueken.winkels@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/beneluwi/teamer.git"
+  },
+  "homepage": "https://github.com/beneluwi/teamer",
   "devDependencies": {
     "@types/cli-progress": "^3.11.0",
     "@types/node": "^18.11.18",
