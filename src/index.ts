@@ -50,9 +50,3 @@ notifier.notify({
 function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
-function formatter(options: cliProgress.Options, params: cliProgress.Params, payload: any) {
-  const bar = new cliProgress.Bar(options);
-
-  return `TEAmer | ${bar} | {percentage}% | ${Math.round(params.value / 60)}/${Math.round(params.total / 60)} Minutes`
-}
