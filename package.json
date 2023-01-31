@@ -1,6 +1,6 @@
 {
   "name": "teamer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "simple terminal tea timer",
   "main": "build/index.js",
   "bin": {
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "tsc && ./build/index.js -t 1",
     "format": "prettier -w .",
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "tsc && npm publish"
   },
   "type": "module",
   "keywords": [
