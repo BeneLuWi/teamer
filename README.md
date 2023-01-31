@@ -2,7 +2,7 @@
     <img src="assets/teamer-1.png" height=200>
     <br/>
     <span>
-        Simple team timer for your terminal 
+        Simple tea timer for your terminal 
     </span>
     <br/>
     <span>
