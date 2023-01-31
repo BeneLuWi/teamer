@@ -17,7 +17,7 @@ const argv = yargs(hideBin(process.argv))
 const timeInSecs = argv.time * 60;
 // create new progress bar
 const bar = new cliProgress.SingleBar({
-    format: `TEAmer ${colors.green('{bar}')} {percentage}% | ETA: {eta_formatted}`,
+    format: `TEAmer ${colors.green("{bar}")} {percentage}% | ETA: {eta_formatted}`,
     barCompleteChar: "\u2588",
     barIncompleteChar: "\u2591",
     hideCursor: true,
@@ -41,8 +41,4 @@ notifier.notify({
 });
 function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
-}
-function formatter(options, params, payload) {
-    const bar = new cliProgress.Bar(options);
-    return `TEAmer | ${bar} | {percentage}% | ${Math.round(params.value / 60)}/${Math.round(params.total / 60)} Minutes`;
 }
