@@ -20,29 +20,29 @@ const argv = yargs(hideBin(process.argv))
 const timeInSecs = argv.time * 60;
 
 // create new progress bar
-const b1 = new cliProgress.SingleBar({
-  format: formatter,
+const bar = new cliProgress.SingleBar({
+  format: `TEAmer ${colors.green('{bar}')} {percentage}% | ETA: {eta_formatted}`,
   barCompleteChar: "\u2588",
   barIncompleteChar: "\u2591",
   hideCursor: true,
 });
-b1.start(timeInSecs, 0, {
+bar.start(timeInSecs, 0, {
   speed: "N/A",
 });
 
 let running = true;
 while (running) {
   await delay(1000);
-  b1.increment();
-  running = b1.getProgress() < 1;
+  bar.increment();
+  running = bar.getProgress() < 1;
 }
 
 // stop the bar
-b1.stop();
+bar.stop();
 
 notifier.notify({
   title: "Tee ist fertig",
-  message: `Ziehzeit war min`,
+  message: `Ziehzeit war ${argv.time} min`,
   wait: false,
   timeout: false,
 });
